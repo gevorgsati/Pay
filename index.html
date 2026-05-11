@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Secure Checkout</title>
+    <title>UPI Checkout</title>
     <style>
-        body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
-        .card { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; width: 85%; max-width: 400px; }
-        .btn { background-color: #1a73e8; color: white; padding: 20px; border-radius: 12px; text-decoration: none; font-size: 18px; font-weight: bold; display: block; margin-top: 25px; }
-        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #1a73e8; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #f8f9fa; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        .btn { background-color: #007bff; color: white; padding: 15px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="card">
-        <h2 style="color: #1a73e8;">Connecting to UPI</h2>
-        <div class="loader"></div>
-        <p style="color: #5f6368;">Opening your payment apps...</p>
-        <a href="upi://pay?pa=gpay-12200225609@okbizaxis&pn=GPay%20Business&am=1.00&cu=INR&tr=ORDER12345" class="btn">Click to Pay ₹1.00</a>
+        <h2>Redirecting to UPI...</h2>
+        <p>Please wait a moment.</p>
+        <a href="upi://pay?pa=gpay-12200225609@okbizaxis&pn=GPay%20Business&mc=0000&tr=ORDER12345&tn=Payment&am=1.00&cu=INR" class="btn">Pay ₹1.00 Now</a>
     </div>
     <script>
         window.onload = function() {
             setTimeout(function() {
-                window.location.href = "upi://pay?pa=gpay-12200225609@okbizaxis&pn=GPay%20Business&am=1.00&cu=INR&tr=ORDER12345";
+                window.location.href = "upi://pay?pa=gpay-12200225609@okbizaxis&pn=GPay%20Business&mc=0000&tr=ORDER12345&tn=Payment&am=1.00&cu=INR";
             }, 1000);
         };
     </script>
